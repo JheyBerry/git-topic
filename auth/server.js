@@ -7,18 +7,18 @@ const http = require('http')
 const server = http.createServer(app)
 const port = process.env.PORT || 3000
 
-console.log(process.env.REACT_APP_CLIENT_ID)
+console.log(process.env.CLIENT_ID)
 
 passport.use(
   new GithubStrategy(
     {
-      clientID: process.env.REACT_APP_CLIENT_ID,
-      clientSecret: process.env.REACT_APP_CLIENT_SECRET,
+      clientID: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
       callbackURL: '/user/sign/callback',
     },
     // eslint-disable-next-line func-names
     function (accessToken, refreshToken, profile, done) {
-      // we will just use the profile object returned by GitHub
+      // returning profile
       // eslint-disable-next-line no-console
       console.log(profile)
       done(null, profile)
@@ -78,11 +78,6 @@ app.get('/logout', function (req, res) {
   res.redirect('/')
 })
 
-// Simple route middleware to ensure user is authenticated.
-//  Use this route middleware on any resource that needs to be protected.  If
-//  the request is authenticated (typically via a persistent login session),
-//  the request will proceed.  Otherwise, the user will be redirected to the login page.
-
 // eslint-disable-next-line consistent-return
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
@@ -92,7 +87,7 @@ function ensureAuthenticated(req, res, next) {
 }
 
 app.get('/protected', ensureAuthenticated, function (req, res) {
-  res.send('acess granted')
+  res.send('access granted')
 })
 
 console.log('NODE_ENV is', process.env.NODE_ENV)
