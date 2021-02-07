@@ -1,4 +1,5 @@
 import React from 'react'
+import LoginButton from './components/LoginButton'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <a href="https://github.com/JheyBerry/git-topic" target="_blank">
           Git Topics
         </a>
+        <LoginButton />
       </header>
     </div>
   )
