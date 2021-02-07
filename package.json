@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@auth0/auth0-react": "^1.2.0",
     "@imaginary-cloud/eslint-config-react": "1.0.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
     "eslint": "^7.19.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.10.1",
@@ -37,6 +39,7 @@
     "lint:fix": "yarn run lint -- --fix",
     "format": "prettier --write \"{,!(node_modules)/**/}*.js\""
   },
+  "proxy": "https://localhost:3000/gitopics",
   "eslintConfig": {
     "extends": "@imaginary-cloud/react"
   },
