@@ -20,6 +20,14 @@ const MainNav = () => (
       Profile
     </NavLink>
     <NavLink
+      to="/my-repos"
+      exact
+      className="nav-link"
+      activeClassName="router-link-exact-active"
+    >
+      My Repositories
+    </NavLink>
+    <NavLink
       to="/starred-repo"
       exact
       className="nav-link"

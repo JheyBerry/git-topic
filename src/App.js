@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import { NavBar, Footer, Loading, Card } from "./components";
-import { Home, Profile, StarredRepo } from "./views";
+import { Home, Profile, StarredRepo, MyRepos } from "./views";
 import ProtectedRoute from "./auth/protected-route";
 
 import "./app.css";
@@ -23,6 +23,7 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <ProtectedRoute path="/profile" component={Profile} />
           <ProtectedRoute path="/starred-repo" component={StarredRepo} />
+          <ProtectedRoute path="/my-repos" component={MyRepos} />
         </Switch>
       </div>
       <Card />
