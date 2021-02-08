@@ -33,3 +33,9 @@
 .result-block-container .result-block {
   opacity: 1;
 }
+
+.logo{
+  background-image: url(../src/assets/git-topics.svg);
+  width: 5.5rem;
+  height: 4rem;
+}
