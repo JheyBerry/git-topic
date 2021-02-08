@@ -1,18 +1,34 @@
-import React from 'react'
-import LoginButton from './components/LoginButton'
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
-function App() {
+import { NavBar, Footer, Loading, Card } from "./components";
+import { Home, Profile, StarredRepo } from "./views";
+import ProtectedRoute from "./auth/protected-route";
+
+import "./app.css";
+
+const App = () => {
+  const { isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Miau mano</p>
-        <a href="https://github.com/JheyBerry/git-topic" target="_blank">
-          Git Topics
-        </a>
-        <LoginButton />
-      </header>
+    <div id="app" className="d-flex flex-column h-100">
+      <NavBar />
+      <div className="container flex-grow-1">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <ProtectedRoute path="/profile" component={Profile} />
+          <ProtectedRoute path="/starred-repo" component={StarredRepo} />
+        </Switch>
+      </div>
+      <Card />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

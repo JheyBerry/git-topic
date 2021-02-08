@@ -1,15 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Auth0Provider } from '@auth0/auth0-react'
-import App from './App'
+import { BrowserRouter as Router } from 'react-router-dom'
+import App from './app'
+import Auth0ProviderWithHistory from './auth/auth0-provider-with-history'
+
+import './index.css'
 
 ReactDOM.render(
-  <Auth0Provider
-    domain={process.env.REACT_APP_DOMAIN}
-    clientId={process.env.REACT_APP_CLIENT_ID}
-    redirectUri={window.location.origin}
-  >
-    <App />
-  </Auth0Provider>,
+  <Router>
+    <Auth0ProviderWithHistory>
+      <App />
+    </Auth0ProviderWithHistory>
+  </Router>,
   document.getElementById('root'),
 )
