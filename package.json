@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=v14.5.0"
+    "node": "v14.5.0"
   },
   "dependencies": {
     "@auth0/auth0-react": "^1.2.0",
