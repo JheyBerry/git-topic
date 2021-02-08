@@ -2,6 +2,9 @@
   "name": "git-topics",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=v14.5.0"
+  },
   "dependencies": {
     "@auth0/auth0-react": "^1.2.0",
     "@imaginary-cloud/eslint-config-react": "1.0.1",
@@ -32,7 +35,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env PORT=4040 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
