@@ -43,3 +43,11 @@
 .card {
   margin: 1rem;
 }
+
+.navbar .router-link-exact-active {
+  border-bottom: 3px solid #E97C53;
+}
+
+a {
+  color: #E97C53 ;
+}
