@@ -9,27 +9,37 @@ const StarredRepo = () => {
   useEffect(() => {
     const search = async () => {
       try {
-        const result = await axios(`https://api.github.com/users/${user.nickname}/starred`)
+        const setData = await axios(`https://api.github.com/users/${user.nickname}/starred`)
   
-        setRepos(result.data);
-        console.log(result.data)
+        setRepos(setData.data);
+        console.log(setData.data)
       } catch(err) {
         console.log(err)
       }
-    }
-    
+    }   
     search()
   }, [])
 
-  const listRepos = repos.length !== 0 ? (
-    repos.map((item) => <div className="card" key={item.id}>{ item.name }</div>)
+  const listStarredRepos = repos.length !== 0 ? (
+    repos.map((item) => {
+      return(
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">{item.name}</h5>
+              <h6 className="card-subtitle mb-2 text-muted">{item.id}</h6>
+              <p className="card-text">{item.description}</p>
+              <a href= {item.svn_url} target="_blank" className="card-link">{item.svn_url}</a>
+            </div>
+          </div> 
+      )
+    })
   ) : (
     <p>No repos starred</p>
   )
 
   return (
     <div>
-      <ul>{listRepos}</ul>
+        {listStarredRepos}
     </div>
   )
 }

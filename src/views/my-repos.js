@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import { useAuth0 } from "@auth0/auth0-react"
 import axios from 'axios'
+import { RepoCard } from '../components'
 
 const MyRepos = () => {  
   const { user } = useAuth0()
   const [repos, setRepos] = useState([])
+  const [topics, setTopics] = useState([])
 
   useEffect(() => {
     const search = async () => {
       try {
-        const result = await axios(`https://api.github.com/users/${user.nickname}/repos`)
-  
-        setRepos(result.data);
-        console.log(result.data)
+        const response = await axios(`https://api.github.com/users/${user.nickname}/repos`)
+        
+        setRepos(response.data);
+        console.log(response.data)
       } catch(err) {
         console.log(err)
       }
@@ -22,16 +24,19 @@ const MyRepos = () => {
   }, [])
 
   const listRepos = repos.length !== 0 ? (
-    repos.map((item) => <div className="card" key={item.id}>{ item.name }</div>)
+    repos.map((item) => {
+      return(
+          <RepoCard key={item.id} item={item}/> 
+      )
+    })
   ) : (
     <p>No repos starred</p>
   )
 
   return (
     <div>
-      <ul>{listRepos}</ul>
+        {listRepos}
     </div>
   )
 }
-      
 export default MyRepos

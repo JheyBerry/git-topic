@@ -4,7 +4,7 @@ import drawing from "./../assets/drawing.png"
 const Home= () => {
 
   return (
-      <div className="align-items-center row profile-header">
+      <div className="text-center">
         <div style={{width:"50%"}}>
           <h1>Welcome to Git Topics</h1>
           <h2>The easiest way to tag and find your repositories.</h2>
