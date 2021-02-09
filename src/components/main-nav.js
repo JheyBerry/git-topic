@@ -12,14 +12,6 @@ const MainNav = () => (
       Home
     </NavLink>
     <NavLink
-      to="/profile"
-      exact
-      className="nav-link"
-      activeClassName="router-link-exact-active"
-    >
-      Profile
-    </NavLink>
-    <NavLink
       to="/my-repos"
       exact
       className="nav-link"
