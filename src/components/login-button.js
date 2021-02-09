@@ -10,7 +10,7 @@ const LoginButton = () => {
       className="btn btn-dark btn-block"
       onClick={() => loginWithRedirect()}
     >
-      <img className="icon" src={githubIcon} style={{padding: "0.5rem 0.5rem 0.7rem"}}></img>
+      <img className="icon" src={githubIcon} style={{padding: "0.5rem 0.5rem 0.7rem 0rem"}}></img>
       Log In with GitHub
     </button>
   )
