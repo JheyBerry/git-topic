@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import App from './App'
 import Auth0ProviderWithHistory from './auth/auth0-provider-with-history'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './index.css'
 

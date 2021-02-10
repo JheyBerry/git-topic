@@ -1,9 +1,9 @@
 import React from 'react'
+import Spinner from 'react-bootstrap/Spinner'
 
 const Loading = () => (
-  <div class="spínner spinner-border" role="status">
-    <img className="logo" alt="Loading..." />
-  </div>
+  <Spinner animation="border" role="status">
+    <span className="sr-only">Loading...</span>
+  </Spinner>
 )
-
 export default Loading
