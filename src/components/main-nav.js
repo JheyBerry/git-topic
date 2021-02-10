@@ -12,7 +12,7 @@ const MainNav = () => (
       Home
     </NavLink>
     <NavLink
-      to="/my-repos"
+      to="/repositories"
       exact
       className="nav-link"
       activeClassName="router-link-exact-active"
@@ -20,7 +20,7 @@ const MainNav = () => (
       My Repositories
     </NavLink>
     <NavLink
-      to="/starred-repo"
+      to="/starred-repositories"
       exact
       className="nav-link"
       activeClassName="router-link-exact-active"

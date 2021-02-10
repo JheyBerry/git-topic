@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { Button, ButtonGroup } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap'
 import { useAuth0 } from "@auth0/auth0-react"
 import axios from 'axios'
-import { ButtonToolbar } from 'react-bootstrap'
 import DeleteTopic from './delete-topic'
 
 const Topics = ({item}) => {  
@@ -27,7 +26,7 @@ const Topics = ({item}) => {
 
         const topicsButton = topics.map((itemTopic, index) => {
             return (
-            <ButtonToolbar key={item.names} className="mb-3 mt-3" aria-label="Toolbar with Button groups">
+            <ButtonToolbar key={index} className="mb-3 mt-3" aria-label="Toolbar with Button groups">
                 <ButtonGroup className="mr-1 ml-1" aria-label="First group">
                 <Button variant="secondary"
                 >{itemTopic}</Button>

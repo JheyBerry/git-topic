@@ -23,7 +23,7 @@ const StarredRepo = () => {
   const listStarredRepos = repos.length !== 0 ? (
     repos.map((item) => {
       return( 
-        <div className="card">
+        <div className="card" key={item.id}>
           <div className="card-body">
             <h5 className="card-title">{item.name}</h5>
             <h6 className="card-subtitle mb-2 text-muted">{item.id}</h6>

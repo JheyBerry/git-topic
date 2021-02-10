@@ -32,7 +32,7 @@ const MyRepos = () => {
 
   return (
     <div>
-        {listRepos}
+      {listRepos}
     </div>
   )
 }
