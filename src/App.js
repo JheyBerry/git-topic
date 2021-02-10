@@ -21,8 +21,8 @@ const App = () => {
       <div className="container flex-grow-1">
         <Switch>
           <Route path="/" exact component={Home} />
-          <ProtectedRoute path="/starred-repo" component={StarredRepo} />
-          <ProtectedRoute path="/my-repos" component={MyRepos} />
+          <ProtectedRoute path="/starred-repositories" component={StarredRepo} />
+          <ProtectedRoute path="/repositories" component={MyRepos} />
         </Switch>
       </div>
       <Card />

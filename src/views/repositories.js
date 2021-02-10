@@ -6,7 +6,6 @@ import { RepoCard } from '../components'
 const MyRepos = () => {  
   const { user } = useAuth0()
   const [repos, setRepos] = useState([])
-  const [topics, setTopics] = useState([])
 
   useEffect(() => {
     const search = async () => {
@@ -25,12 +24,10 @@ const MyRepos = () => {
 
   const listRepos = repos.length !== 0 ? (
     repos.map((item) => {
-      return(
-          <RepoCard key={item.id} item={item}/> 
-      )
+      return <RepoCard key={item.id} item={item}/>
     })
   ) : (
-    <p>No repos starred</p>
+    <p>Any Repository</p>
   )
 
   return (
@@ -39,4 +36,5 @@ const MyRepos = () => {
     </div>
   )
 }
+
 export default MyRepos

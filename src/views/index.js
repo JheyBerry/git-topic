@@ -1,5 +1,5 @@
 import Home from './home'
-import StarredRepo from './starred-repo'
-import MyRepos from './my-repos'
+import StarredRepo from './starred-repositories'
+import MyRepos from './repositories'
 
 export { Home, StarredRepo, MyRepos }
