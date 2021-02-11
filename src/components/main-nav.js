@@ -25,7 +25,7 @@ const MainNav = () => (
       className="nav-link"
       activeClassName="router-link-exact-active"
     >
-      Starred Repositories
+      My Starred Repositories
     </NavLink>
   </div>
 )

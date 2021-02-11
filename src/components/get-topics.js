@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 import { useAuth0 } from "@auth0/auth0-react"
 import axios from 'axios'
 import DeleteTopic from './delete-topic'
+import EditTopic from './edit-topic'
 
 const Topics = ({item}) => {  
     const { user } = useAuth0()
@@ -26,14 +27,20 @@ const Topics = ({item}) => {
 
         const topicsButton = topics.map((itemTopic, index) => {
             return (
-            <ButtonToolbar key={index} className="mb-3 mt-3" aria-label="Toolbar with Button groups">
-                <ButtonGroup className="mr-1 ml-1" aria-label="First group">
-                <Button variant="secondary"
-                >{itemTopic}</Button>
-                <Button variant="secondary">E</Button>
-                <DeleteTopic item={topics} repo={item.name}/>
-                </ButtonGroup>
-            </ButtonToolbar>
+                <div>
+                    <Card>
+                        <Card.Body>
+                            <Button variant="secondary"
+                            >{itemTopic}</Button>
+                        </Card.Body>
+                        <Card.Footer>
+                            <div className="row" style={{justifyContent: "center"}}>
+                                <EditTopic item={topics} repo={item.name}/>
+                                <DeleteTopic item={topics} repo={item.name}/>
+                            </div>  
+                        </Card.Footer>
+                    </Card>
+                </div>
             ) 
         })
         

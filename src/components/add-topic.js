@@ -9,7 +9,7 @@ const AddTopic = () => {
         <InputGroup.Prepend>
           <InputGroup.Text> Topic name:</InputGroup.Text>
         </InputGroup.Prepend>
-        <FormControl placeholder="Type here..." aria-describedby="basic-addon1" />
+        <FormControl placeholder="Type here..." />
         <InputGroup.Prepend>
           <Button type="submit" variant="secondary">Submit</Button>
         </InputGroup.Prepend>
