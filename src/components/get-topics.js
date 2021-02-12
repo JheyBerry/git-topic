@@ -5,7 +5,7 @@ import axios from 'axios'
 import DeleteTopic from './delete-topic'
 import EditTopic from './edit-topic'
 
-const Topics = ({item}) => {  
+const Topics = ({repo}) => {  
     const { user } = useAuth0()
     const [showTopics, setShowTopics] = useState(false)
     const [topicsHTML, setTopics] = useState()
@@ -17,7 +17,7 @@ const Topics = ({item}) => {
         }}
         
         try {
-        const response = await axios(`https://api.github.com/repos/${user.nickname}/${item.name}/topics`, config)
+        const response = await axios(`https://api.github.com/repos/${user.nickname}/${repo.name}/topics`, config)
         console.log(response)
 
         const topics = response.data.names
@@ -35,8 +35,8 @@ const Topics = ({item}) => {
                         </Card.Body>
                         <Card.Footer>
                             <div className="row" style={{justifyContent: "center"}}>
-                                <EditTopic item={topics} repo={item.name}/>
-                                <DeleteTopic item={topics} repo={item.name}/>
+                                <EditTopic item={topics} repo={repo.name}/>
+                                <DeleteTopic item={topics} repo={repo.name}/>
                             </div>  
                         </Card.Footer>
                     </Card>

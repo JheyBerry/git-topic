@@ -4,7 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react"
 import editIcon from './../assets/pencil.svg'
 import axios from 'axios'
 
-const EditTopic = ({item, repo}) => {  
+const EditTopic = ({topics, repo}) => {  
   const { user } = useAuth0()
   
   const ediTopic = async () => {
@@ -14,7 +14,7 @@ const EditTopic = ({item, repo}) => {
         Accept: "application/vnd.github.mercy-preview+json",
       },
       data: {
-        "names": [item]
+        "names": [topics]
       }
     }
 
