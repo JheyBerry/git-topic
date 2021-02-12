@@ -4,7 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react"
 import deleteIcon from './../assets/clear.svg'
 import axios from 'axios'
 
-const DeleteTopic = ({item, repo}) => {  
+const DeleteTopic = ({topics, repo}) => {  
   const { user } = useAuth0()
   
   const delTopic = async () => {
