@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { NavBar, Footer, Loading, Card } from "./components";
 import { Home, StarredRepo, MyRepos } from "./views";
 import ProtectedRoute from "./auth/protected-route";
-import Container from 'react-bootstrap/container'
+import Container from 'react-bootstrap/Container'
 
 
 import "./app.css";
@@ -20,7 +20,7 @@ const App = () => {
   return (
     <div id="app" className="d-flex flex-column h-100">
       <NavBar />
-      <Container>
+      <Container fluid>
         <Switch>
           <Route path="/" exact component={Home} />
           <ProtectedRoute path="/starred-repositories" component={StarredRepo} />
