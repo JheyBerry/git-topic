@@ -1,3 +1,15 @@
+@media (max-width: 768px) {
+  .next-steps .col-md-5 {
+    margin-bottom: 0;
+  }
+}
+
+:root {
+  --main-color: #E97C53;
+  --main-color-hover: #db663c;
+}
+
+
 .next-steps .fa-link {
   margin-right: 5px;
 }
@@ -9,12 +21,6 @@
 
 .next-steps .col-md-5 {
   margin-bottom: 3rem;
-}
-
-@media (max-width: 768px) {
-  .next-steps .col-md-5 {
-    margin-bottom: 0;
-  }
 }
 
 .spinner {
@@ -40,14 +46,34 @@
   height: 4rem;
 }
 
+
+.navbar .router-link-exact-active {
+  border-bottom: 3px solid var(--main-color);
+}
+
 .card {
   margin: 1rem;
 }
 
-.navbar .router-link-exact-active {
-  border-bottom: 3px solid #E97C53;
+.card a {
+  color: var(--main-color) !important;
 }
 
-a {
-  color: #E97C53 ;
+.card-title, .card-subtitle, .card-text {
+  padding: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.5rem !important;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: var(--main-color) !important;
+  border-color: var(--main-color) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--main-color-hover) !important;
+  border-color: var(--main-color-hover) !important;
 }
