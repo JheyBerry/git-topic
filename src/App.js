@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
-import { NavBar, Footer, Loading, Card } from "./components";
+import { NavBar, Loading, Card } from "./components";
 import { Home, StarredRepo, MyRepos } from "./views";
 import ProtectedRoute from "./auth/protected-route";
 import Container from 'react-bootstrap/Container'
@@ -28,7 +28,6 @@ const App = () => {
         </Switch>
       </Container>
       <Card />
-      <Footer />
     </div>
   );
 };
