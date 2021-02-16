@@ -2,14 +2,11 @@ import React from 'react'
 import Card from 'react-bootstrap/Card'
 import AddTopic  from './add-topic'
 import Topics from './get-topics'
-import CardBackground from './../assets/card-bg.svg'
 
 const RepoCard = ({item}) => {
   return (
     <div>
       <Card className="bg-light" style={{ width: '25rem' }}>
-        <Card.Img src={CardBackground} alt="Card image" />
-        <Card.ImgOverlay>
           <Card.Title>
             <a href= {item.svn_url} target="_blank">{item.name}</a>
           </Card.Title>
@@ -19,7 +16,6 @@ const RepoCard = ({item}) => {
             <AddTopic item={item}/>
             <Topics key={item.name} repo={item.name}/>
           </div>
-        </Card.ImgOverlay>
       </Card>
     </div> 
   )
