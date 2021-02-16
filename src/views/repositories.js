@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Row from 'react-bootstrap/Row'
 import { useAuth0 } from "@auth0/auth0-react"
 import axios from 'axios'
 import { RepoCard } from '../components'
@@ -32,7 +33,9 @@ const MyRepos = () => {
 
   return (
     <div>
-      {listRepos}
+      <Row className="justify-content-center">
+        {listRepos}
+      </Row>
     </div>
   )
 }

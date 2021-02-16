@@ -6,7 +6,7 @@ import AuthNav from './auth-nav'
 
 const NavBar = () => (
   <div className="nav-container mb-3">
-    <Navbar className="navbar navbar-expand-md navbar-light bg-light">
+    <Navbar className="navbar navbar-expand-md">
         <div className="container-fluid" style={{padding:"0 10rem"}}>
           <div className="navbar-brand logo" />
           <MainNav />
