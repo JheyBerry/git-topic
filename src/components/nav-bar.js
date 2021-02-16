@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from 'react-bootstrap/navbar'
+import Navbar from 'react-bootstrap/Navbar'
 
 import MainNav from './main-nav'
 import AuthNav from './auth-nav'
