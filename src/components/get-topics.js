@@ -17,7 +17,7 @@ const Topics = ({repo}) => {
         }}
         
         try {
-        const response = await axios(`https://api.github.com/repos/${user.nickname}/${repo.name}/topics`, config)
+        const response = await axios(`https://api.github.com/repos/${user.nickname}/${repo}/topics`, config)
         console.log(response)
 
         const topics = response.data.names
@@ -27,19 +27,10 @@ const Topics = ({repo}) => {
 
         const topicsButton = topics.map((itemTopic, index) => {
             return (
-                <div>
-                    <Card>
-                        <Card.Body>
-                            <Button variant="secondary"
-                            >{itemTopic}</Button>
-                        </Card.Body>
-                        <Card.Footer>
-                            <div className="row" style={{justifyContent: "center"}}>
-                                <EditTopic item={topics} repo={repo.name}/>
-                                <DeleteTopic item={topics} repo={repo.name}/>
-                            </div>  
-                        </Card.Footer>
-                    </Card>
+                <div className="btn-secondary">
+                    {itemTopic}
+                    <EditTopic item={topics} repo={repo}/>
+                    <DeleteTopic item={topics} repo={repo}/>
                 </div>
             ) 
         })
@@ -62,13 +53,11 @@ const Topics = ({repo}) => {
         <div>
             <Button 
             type="button" 
-            variant="danger"
             className="dropdown-toggle" 
-            block
             onClick={() => {
                 setShowTopics(true)
                 getTopics()
-            }}> See Repository Topics </Button>
+            }}> See Topics </Button>
             {topics}
         </div>
     )

@@ -7,7 +7,7 @@ import CardBackground from './../assets/card-bg.svg'
 const RepoCard = ({item}) => {
   return (
     <div>
-      <Card className="bg-dark text-white" style={{ width: '25rem' }}>
+      <Card className="bg-light" style={{ width: '25rem' }}>
         <Card.Img src={CardBackground} alt="Card image" />
         <Card.ImgOverlay>
           <Card.Title>
@@ -15,9 +15,9 @@ const RepoCard = ({item}) => {
           </Card.Title>
           <Card.Subtitle>{item.id}</Card.Subtitle>
           <Card.Text>{item.description}</Card.Text>
-          <div>
+          <div >
             <AddTopic item={item}/>
-            <Topics key={item.name} item={item}/>
+            <Topics key={item.name} repo={item.name}/>
           </div>
         </Card.ImgOverlay>
       </Card>
