@@ -7,8 +7,8 @@
 :root {
   --main-color: #92abcf;
   --main-color-hover: #8399BA;
-  --main-navy-color: #05275a;
-  --main-navy-color-hover: #042351;
+  --main-gradient-color: linear-gradient(180deg, #566FF8 0%, #394FDC 100%);
+  --main-gradient-hover: linear-gradient(90deg, #566FF8 0%, #394FDC 100%);
 }
 
 body {
@@ -57,7 +57,7 @@ a {
 }
 
 .navbar {
-  background-color: #212c3d;
+  background-color: #0F1B35;
   box-shadow: rgb(0 0 0 / 27%) 0px 2px 3px 2px;
 }
 
@@ -75,25 +75,26 @@ a {
 
 .btn-primary {
   color: #fff;
-  background-color: var(--main-color) !important;
+  background: var(--main-color) !important;
   border-color: var(--main-color) !important;
 }
 
 .btn-primary:hover {
-  background-color: var(--main-color-hover) !important;
+  background: var(--main-color-hover) !important;
   border-color: var(--main-color-hover) !important;
 }
 
 .btn-dark {
   color: #fff;
-  background-color: var(--main-navy-color) !important;
-  border-color: var(--main-navy-color-hover) !important;
+  background: var(--main-gradient-color) !important;
+  border: var(--main-gradient-hover) !important;
 }
 
 .btn-dark:hover {
   color: #fff;
-  background-color: var(--main-navy-color-hover) !important;
-  border-color: var(--main-navy-color-hover) !important;
+  background: var(--main-gradient-hover) !important;
+  border: var(--main-gradient-hover) !important;
+  transition-duration: 2s;
 }
 
 .home-animation {
@@ -108,7 +109,7 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #0f17248e;
+  background: #0f17243a;
   color: #fff;
   text-align: left;
   top: 80px;
