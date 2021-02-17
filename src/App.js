@@ -27,7 +27,6 @@ const App = () => {
           <ProtectedRoute path="/repositories" component={MyRepos} />
         </Switch>
       </Container>
-      <Card />
     </div>
   );
 };
