@@ -34,13 +34,14 @@
     "react-dom": "^17.0.1",
     "react-elastic-carousel": "^0.11.1",
     "react-lottie": "^1.2.3",
+    "react-multi-carousel": "^2.6.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
     "styled-components": "^5.2.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env PORT=4040  react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
