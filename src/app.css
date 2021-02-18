@@ -6,9 +6,9 @@
 
 :root {
   --main-color: #92abcf;
-  --main-color-hover: #8399BA;
-  --main-gradient-color: linear-gradient(180deg, #566FF8 0%, #394FDC 100%);
-  --main-gradient-hover: linear-gradient(90deg, #566FF8 0%, #394FDC 100%);
+  --main-color-hover: #8399ba;
+  --main-gradient-color: linear-gradient(180deg, #566ff8 0%, #394fdc 100%);
+  --main-gradient-hover: linear-gradient(90deg, #566ff8 0%, #394fdc 100%);
 }
 
 body {
@@ -50,14 +50,14 @@ a {
   opacity: 1;
 }
 
-.logo{
+.logo {
   background-image: url(../src/assets/git-topics.svg) !important;
-  width: 5.5rem;
+  width: 6.5rem;
   height: 4rem;
 }
 
 .navbar {
-  background-color: #0F1B35;
+  background-color: #0f1b35;
   box-shadow: rgb(0 0 0 / 27%) 0px 2px 3px 2px;
 }
 
@@ -65,7 +65,9 @@ a {
   margin: 1rem;
 }
 
-.card-title, .card-subtitle, .card-text {
+.card-title,
+.card-subtitle,
+.card-text {
   padding: 0.5rem;
 }
 
@@ -113,13 +115,13 @@ a {
   color: #fff;
   text-align: left;
   top: 80px;
-  left:0;
+  left: 0;
 }
 
 .home-text h1 {
   font-size: 7rem;
   font-weight: 800;
-  margin:8% 15% 0;
+  margin: 8% 15% 0;
   font-family: 'Maitree', serif;
 }
 
@@ -133,7 +135,7 @@ a {
 .home-text-animation {
   position: relative;
   opacity: 0;
-  margin:2% 15%;
+  margin: 2% 15%;
   transform: translateX(-600px);
   animation: 1.2s slideIn ease-in-out forwards 1s;
 }
@@ -153,4 +155,4 @@ a {
     transform: translateY(0px);
     opacity: 1;
   }
-};
+} ;
