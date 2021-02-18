@@ -6,7 +6,7 @@ import LoginButton from './login-button'
 const AuthenticationButtonHome = () => {
   const { isAuthenticated } = useAuth0()
 
-  return isAuthenticated ? <></> : <LoginButton/>
+  return isAuthenticated ? <></> : <LoginButton />
 }
 
 export default AuthenticationButtonHome

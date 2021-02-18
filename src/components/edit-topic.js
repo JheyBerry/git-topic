@@ -1,24 +1,28 @@
 import React from 'react'
-import { Button} from 'react-bootstrap'
-import { useAuth0 } from "@auth0/auth0-react"
+import { Button } from 'react-bootstrap'
+import { useAuth0 } from '@auth0/auth0-react'
 import editIcon from './../assets/pencil.svg'
 import axios from 'axios'
+import PropTypes from 'prop-types'
 
-const EditTopic = ({topics, repo}) => {  
+const EditTopic = ({ topics, repo }) => {
   const { user } = useAuth0()
-  
+
   const ediTopic = async () => {
     let config = {
-      method: "put",
+      method: 'put',
       headers: {
-        Accept: "application/vnd.github.mercy-preview+json",
+        Accept: 'application/vnd.github.mercy-preview+json',
       },
       data: {
-        "names": [topics]
-      }
+        names: [topics],
+      },
     }
 
-    await axios(`https://api.github.com/repos/${user.nickname}/${repo}/topics`, config)
+    await axios(
+      `https://api.github.com/repos/${user.nickname}/${repo}/topics`,
+      config
+    )
       .then(function (response) {
         console.log(response)
       })
@@ -27,17 +31,24 @@ const EditTopic = ({topics, repo}) => {
       })
   }
 
-  return(
+  return (
     <div>
-      <Button 
+      <Button
         variant="clear"
         size="sm"
         onClick={() => {
-        ediTopic()}}>
-        <img src={ editIcon }></img>
+          ediTopic()
+        }}
+      >
+        <img src={editIcon}></img>
       </Button>
     </div>
   )
+}
+
+EditTopic.propTypes = {
+  topics: PropTypes.array,
+  repo: PropTypes.string,
 }
 
 export default EditTopic

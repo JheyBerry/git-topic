@@ -1,6 +1,8 @@
+/* eslint-disable no-undef */
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { Auth0Provider } from '@auth0/auth0-react'
+import PropTypes from 'prop-types'
 
 const Auth0ProviderWithHistory = ({ children }) => {
   const domain = process.env.REACT_APP_AUTH0_DOMAIN
@@ -22,6 +24,10 @@ const Auth0ProviderWithHistory = ({ children }) => {
       {children}
     </Auth0Provider>
   )
+}
+
+Auth0ProviderWithHistory.propTypes = {
+  children: PropTypes.any,
 }
 
 export default Auth0ProviderWithHistory

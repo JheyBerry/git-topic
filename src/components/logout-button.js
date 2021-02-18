@@ -14,7 +14,11 @@ const LogoutButton = () => {
         })
       }
     >
-      <img className="icon" src={githubIcon} style={{padding: "0.5rem 0.5rem 0.7rem 0rem"}}></img>
+      <img
+        className="icon"
+        src={githubIcon}
+        style={{ padding: '0.5rem 0.5rem 0.7rem 0rem' }}
+      ></img>
       Log Out
     </button>
   )

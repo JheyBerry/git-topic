@@ -2,7 +2,6 @@ import React from 'react'
 import { InputGroup, Button, FormControl } from 'react-bootstrap'
 
 const AddTopic = () => {
-    
   return (
     <div>
       <InputGroup className="mb-2">
