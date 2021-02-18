@@ -62,7 +62,16 @@ a {
 }
 
 .card {
-  margin: 1rem;
+  width: 22rem;
+  height: 20rem;
+  padding: 1rem;
+  border-radius: 2rem !important;
+}
+
+.bg-light.active.card {
+  height: 36rem !important;
+  width: 23.5rem;
+  transition: 2s;
 }
 
 .card-title,
@@ -155,4 +164,46 @@ a {
     transform: translateY(0px);
     opacity: 1;
   }
-} ;
+}
+
+.instructions {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  color: #fff;
+  text-align: right;
+  top: 80px;
+  right: 0;
+  margin: 1rem;
+}
+
+.instructions h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: 'Maitree', serif;
+}
+
+.instructions h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 3%;
+}
+
+.instructions-animation {
+  position: relative;
+  opacity: 0;
+  margin: 2% 15%;
+  transform: translateX(-600px);
+  animation: 1.2s slideIn ease-in-out forwards 1s;
+}
+
+.instructions-animation::before {
+  content: '';
+  width: 0%;
+  height: 76px;
+  position: absolute;
+  right: -10px;
+  animation: 2s underline ease-in-out forwards 1s;
+  mix-blend-mode: screen;
+}
