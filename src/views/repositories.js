@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState, useEffect } from 'react'
 import Carousel from 'react-elastic-carousel'
 import { useAuth0 } from '@auth0/auth0-react'
@@ -28,11 +29,11 @@ const MyRepos = () => {
   const listRepos =
     repos.length !== 0 ? (
       repos.map((item) => {
-        return <RepoCard key={item.id} item={item} />
+        return <RepoCard key={item.type} item={item} />
       })
     ) : (
-      <p>Any Repository</p>
-    )
+        <p>Any Repository</p>
+      )
 
   return <Carousel>{listRepos}</Carousel>
 }

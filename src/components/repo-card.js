@@ -25,7 +25,7 @@ const RepoCard = ({ item }) => {
 }
 
 RepoCard.propTypes = {
-  item: PropTypes.any,
+  item: PropTypes.object,
 }
 
 export default RepoCard
