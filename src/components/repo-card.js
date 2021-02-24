@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, Button, Modal } from 'react-bootstrap'
+import { Card, Button, Row, Modal, Col } from 'react-bootstrap'
 import AddTopic from './add-topic'
 import Topics from './get-topics'
 import PropTypes from 'prop-types'
@@ -13,19 +13,25 @@ const RepoCard = ({ item }) => {
     return (
       <div>
         <Card className="bg-light card">
-          <Button
-            className="expand"
-            variant="clear"
-            type="button"
-            onClick={handleShow}
-          >
-            <i className="fas fa-expand-arrows-alt"></i>
-          </Button>
-          <Card.Title>
-            <a href={item.svn_url} target="_blank" rel="noreferrer">
-              {item.name}
-            </a>
-          </Card.Title>
+          <Row>
+            <Col xs={10}>
+              <Card.Title>
+                <a href={item.svn_url} target="_blank" rel="noreferrer">
+                  {item.name}
+                </a>
+              </Card.Title>
+            </Col>
+            <Col>
+              <Button
+                className="expand"
+                variant="clear"
+                type="button"
+                onClick={handleShow}
+              >
+                <i className="fa fa-external-link"></i>
+              </Button>
+            </Col>
+          </Row>
           <Card.Subtitle>{item.id}</Card.Subtitle>
           <Card.Text>{item.description}</Card.Text>
         </Card>

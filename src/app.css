@@ -64,9 +64,17 @@ a {
   justify-content: center;
 }
 
+.card .row {
+  margin: 0;
+}
+
+.col-10 {
+  padding-left: 0 !important;
+}
+
 .card {
   width: 22rem;
-  height: 20rem;
+  height: 18rem;
   padding: 1.5rem;
   border-radius: 2rem !important;
   margin: 1rem;
@@ -88,13 +96,13 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
-  display: inline-flex;
-  border-radius: 0.2rem;
   margin: 0.5rem;
   padding: 0rem 0.5rem;
-  background: #0f1724 !important;
-  border-color: var(--main-color) !important;
+  display: inline-flex;
+  border-radius: 0.2rem;
+  color: #0c5460 !important;
+  background-color: #d4daff !important;
+  border-color: #cfd5fd !important;
 }
 
 .btn-group-sm > .btn,
@@ -103,8 +111,7 @@ a {
 }
 
 .btn-primary:hover {
-  background: var(--main-color-hover) !important;
-  border-color: var(--main-color-hover) !important;
+  background: #b4bdf1 !important;
 }
 
 .btn-dark {
@@ -129,8 +136,12 @@ a {
   position: absolute;
 }
 
-i.fas.fa-expand-arrows-alt:hover {
-  font-size: 1.1rem;
+i.fa.fa-external-link {
+  font-size: 1.5rem;
+}
+
+i.fa.fa-external-link:hover {
+  font-size: 1.7rem;
 }
 
 .home-animation {
@@ -237,4 +248,8 @@ i.fas.fa-expand-arrows-alt:hover {
   top: 4rem;
   right: -7rem;
   transform: rotate(293deg);
+}
+
+.modal-backdrop.show {
+  opacity: 0.8 !important;
 }
