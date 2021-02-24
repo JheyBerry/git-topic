@@ -1,44 +1,64 @@
 import React, { useState } from 'react'
-import { Card, Button } from 'react-bootstrap'
+import { Card, Button, Modal } from 'react-bootstrap'
 import AddTopic from './add-topic'
 import Topics from './get-topics'
 import PropTypes from 'prop-types'
 
 const RepoCard = ({ item }) => {
-  const [cardActive, setCardState] = useState(false)
-  let active
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
-  if (cardActive) {
-    active = (
+  const card = () => {
+    return (
       <div>
-        <AddTopic item={item} />
-        <Topics key={item.name} repo={item.name} />
+        <Card className="bg-light card">
+          <Button
+            className="expand"
+            variant="clear"
+            type="button"
+            onClick={handleShow}
+          >
+            <i className="fas fa-expand-arrows-alt"></i>
+          </Button>
+          <Card.Title>
+            <a href={item.svn_url} target="_blank" rel="noreferrer">
+              {item.name}
+            </a>
+          </Card.Title>
+          <Card.Subtitle>{item.id}</Card.Subtitle>
+          <Card.Text>{item.description}</Card.Text>
+        </Card>
+        {modal()}
       </div>
     )
   }
 
-  return (
-    <div>
-      <Card className={`bg-light card ${cardActive ? 'active' : ''}`}>
-        <Button
-          className="expand"
-          variant="clear"
-          type="button"
-          onClick={() => setCardState(!cardActive)}
-        >
-          <i className="fas fa-expand-arrows-alt"></i>
-        </Button>
-        <Card.Title>
-          <a href={item.svn_url} target="_blank" rel="noreferrer">
-            {item.name}
-          </a>
-        </Card.Title>
-        <Card.Subtitle>{item.id}</Card.Subtitle>
-        <Card.Text>{item.description}</Card.Text>
-        {active}
-      </Card>
-    </div>
-  )
+  const modal = () => {
+    return (
+      <div>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              <a href={item.svn_url} target="_blank" rel="noreferrer">
+                {item.name}
+              </a>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Card.Subtitle>ID: {item.id}</Card.Subtitle>
+            <Card.Text>{item.description}</Card.Text>
+            <div>
+              <AddTopic item={item} />
+              <Topics key={item.name} repo={item.name} />
+            </div>
+          </Modal.Body>
+        </Modal>
+      </div>
+    )
+  }
+
+  return <div>{card()}</div>
 }
 
 RepoCard.propTypes = {

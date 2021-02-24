@@ -40,7 +40,7 @@ const DeleteTopic = ({ repo }) => {
           delTopic()
         }}
       >
-        <img src={deleteIcon}></img>
+        <img className="button-icon" src={deleteIcon}></img>
       </Button>
     </div>
   )

@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react'
 import Row from 'react-bootstrap/Row'
 import { useAuth0 } from '@auth0/auth0-react'
 import axios from 'axios'
-import { RepoCard } from '../components'
+import { RepoCard } from '.'
 
-const CardCarousel = () => {
+const CardList = () => {
   const { user } = useAuth0()
   const [repos, setRepos] = useState([])
 
@@ -38,4 +38,4 @@ const CardCarousel = () => {
   return <Row>{listRepos}</Row>
 }
 
-export default CardCarousel
+export default CardList

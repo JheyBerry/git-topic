@@ -3,7 +3,7 @@ import NavBar from './nav-bar'
 import Card from './card'
 import RepoCard from './repo-card'
 import ShowTopics from './get-topics'
-import CardCarousel from './card-carousel'
+import CardList from './card-list'
 import InstructionsRepos from './instructions-repos'
 import AuthenticationButtonHome from './authentication-button-home'
 
@@ -15,5 +15,5 @@ export {
   AuthenticationButtonHome,
   ShowTopics,
   InstructionsRepos,
-  CardCarousel,
+  CardList,
 }

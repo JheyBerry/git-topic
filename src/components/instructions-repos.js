@@ -1,10 +1,13 @@
 import React from 'react'
+import Arrow from '../assets/decrease.svg'
 
 const InstructionsRepos = () => {
   return (
     <div className="instructions">
       <div className="home-text-animation">
-        <h1> Click on a Repository to begin</h1>
+        <h1> Expand a Card Repository</h1>
+        <h2> to begin with </h2>
+        <img src={Arrow}></img>
       </div>
     </div>
   )

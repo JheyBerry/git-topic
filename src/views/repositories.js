@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
-import { CardCarousel, InstructionsRepos } from '../components'
+import { CardList, InstructionsRepos } from '../components'
 
 const MyRepositories = () => {
   return (
     <div>
       <InstructionsRepos />
-      <CardCarousel />
+      <CardList />
     </div>
   )
 }

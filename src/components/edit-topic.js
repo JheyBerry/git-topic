@@ -40,7 +40,7 @@ const EditTopic = ({ topics, repo }) => {
           ediTopic()
         }}
       >
-        <img src={editIcon}></img>
+        <img className="button-icon" src={editIcon}></img>
       </Button>
     </div>
   )

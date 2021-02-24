@@ -1,6 +1,7 @@
 @media (max-width: 768px) {
   .next-steps .col-md-5 {
     margin-bottom: 0;
+    overflow: hidden !important;
   }
 }
 
@@ -13,11 +14,15 @@
 
 body {
   background: #0f1724 !important;
-  overflow: hidden !important;
+  overflow-x: hidden;
 }
 
 a {
   color: var(--main-color) !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
 }
 
 .next-steps .fa-link {
@@ -54,18 +59,22 @@ a {
   box-shadow: rgb(0 0 0 / 27%) 0px 2px 3px 2px;
 }
 
+.row {
+  margin: auto;
+  justify-content: center;
+}
+
 .card {
   width: 22rem;
   height: 20rem;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 2rem !important;
   margin: 1rem;
 }
 
-.bg-light.active.card {
-  height: 36rem !important;
-  width: 23.5rem;
-  transition: 2s;
+.active.card {
+  width: 46rem;
+  transition: 1s;
 }
 
 .card-title,
@@ -80,8 +89,17 @@ a {
 
 .btn-primary {
   color: #fff;
-  background: var(--main-color) !important;
+  display: inline-flex;
+  border-radius: 0.2rem;
+  margin: 0.5rem;
+  padding: 0rem 0.5rem;
+  background: #0f1724 !important;
   border-color: var(--main-color) !important;
+}
+
+.btn-group-sm > .btn,
+.btn-sm {
+  padding: 0.25rem 0.25rem 0rem 0.25rem !important;
 }
 
 .btn-primary:hover {
@@ -102,6 +120,10 @@ a {
   transition-duration: 2s;
 }
 
+.button-icon {
+  vertical-align: text-top;
+}
+
 .expand {
   align-self: flex-end;
   position: absolute;
@@ -119,12 +141,20 @@ i.fas.fa-expand-arrows-alt:hover {
   z-index: -1;
 }
 
+.home-text-animation img {
+  width: 6.5rem;
+  position: absolute;
+  top: 4rem;
+  right: -7rem;
+  transform: rotate(293deg);
+}
+
 .home-text {
   position: absolute;
   width: 100%;
   height: 100%;
   background: #0f17243a;
-  color: #fff;
+  color: white;
   text-align: left;
   top: 80px;
   left: 0;
@@ -170,8 +200,7 @@ i.fas.fa-expand-arrows-alt:hover {
 }
 
 .instructions {
-  position: absolute;
-  width: 50%;
+  width: 100%;
   height: 100%;
   color: #fff;
   text-align: right;
@@ -189,7 +218,7 @@ i.fas.fa-expand-arrows-alt:hover {
 .instructions h2 {
   font-size: 3rem;
   font-weight: 600;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Maitree', sans-serif;
   margin-bottom: 3%;
 }
 

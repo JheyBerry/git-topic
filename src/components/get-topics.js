@@ -28,23 +28,27 @@ const Topics = ({ repo }) => {
       const topics = response.data.names
 
       const noTopic = (
-        <p style={{ margin: '1rem auto' }}>Any topic here yet...</p>
+        <p style={{ margin: '1rem 1rem' }}>There is no topic here yet...</p>
       )
 
       // eslint-disable-next-line no-unused-vars
       const topicsButton = topics.map((itemTopic, index) => {
         return (
-          <div key={repo} className="btn-secondary">
+          <button key={repo} className="btn-primary">
             {itemTopic}
             <EditTopic item={topics} repo={repo} />
             <DeleteTopic item={topics} repo={repo} />
-          </div>
+          </button>
         )
       })
 
       const topicsList = topics.length === 0 ? noTopic : topicsButton
 
-      setTopics(<div style={{ display: 'inline-flex' }}>{topicsList}</div>)
+      setTopics(
+        <div style={{ display: 'inline-flex', margin: 'auto' }}>
+          {topicsList}
+        </div>
+      )
     } catch (err) {
       console.log(err)
     }
@@ -55,6 +59,7 @@ const Topics = ({ repo }) => {
   return (
     <div>
       <Button
+        variant="dark"
         type="button"
         className="dropdown-toggle"
         onClick={() => {
