@@ -4,7 +4,7 @@ import Arrow from '../assets/decrease.svg'
 const InstructionsRepos = () => {
   return (
     <div className="instructions">
-      <div className="home-text-animation">
+      <div className="instructions-animation">
         <h1> Expand a Card Repository</h1>
         <h2> to begin with </h2>
         <img src={Arrow}></img>

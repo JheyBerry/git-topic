@@ -141,14 +141,6 @@ i.fas.fa-expand-arrows-alt:hover {
   z-index: -1;
 }
 
-.home-text-animation img {
-  width: 6.5rem;
-  position: absolute;
-  top: 4rem;
-  right: -7rem;
-  transform: rotate(293deg);
-}
-
 .home-text {
   position: absolute;
   width: 100%;
@@ -232,10 +224,17 @@ i.fas.fa-expand-arrows-alt:hover {
 
 .instructions-animation::before {
   content: '';
-  width: 0%;
-  height: 76px;
+  position: relative;
+  opacity: 0;
+  margin: 2% 15%;
+  transform: translateX(-600px);
+  animation: 1.2s slideIn ease-in-out forwards 1s;
+}
+
+.instructions-animation img {
+  width: 6.5rem;
   position: absolute;
-  right: -10px;
-  animation: 2s underline ease-in-out forwards 1s;
-  mix-blend-mode: screen;
+  top: 4rem;
+  right: -7rem;
+  transform: rotate(293deg);
 }
