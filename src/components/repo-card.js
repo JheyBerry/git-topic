@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Card from 'react-bootstrap/Card'
+import { Card, Button } from 'react-bootstrap'
 import AddTopic from './add-topic'
 import Topics from './get-topics'
 import PropTypes from 'prop-types'
@@ -18,8 +18,16 @@ const RepoCard = ({ item }) => {
   }
 
   return (
-    <div onClick={() => setCardState(!cardActive)}>
-      <Card className={`bg-light ${cardActive ? 'active' : ''}`}>
+    <div>
+      <Card className={`bg-light card ${cardActive ? 'active' : ''}`}>
+        <Button
+          className="expand"
+          variant="clear"
+          type="button"
+          onClick={() => setCardState(!cardActive)}
+        >
+          <i className="fas fa-expand-arrows-alt"></i>
+        </Button>
         <Card.Title>
           <a href={item.svn_url} target="_blank" rel="noreferrer">
             {item.name}

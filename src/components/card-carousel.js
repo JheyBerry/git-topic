@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React, { useState, useEffect } from 'react'
-import Carousel, { consts } from 'react-elastic-carousel'
+import Row from 'react-bootstrap/Row'
 import { useAuth0 } from '@auth0/auth0-react'
 import axios from 'axios'
 import { RepoCard } from '../components'
@@ -32,21 +32,10 @@ const CardCarousel = () => {
         return <RepoCard key={item.type} item={item} />
       })
     ) : (
-        <p>Any Repository</p>
-      )
+      <p>Any Repository</p>
+    )
 
-  return (
-    <Carousel
-      itemPosition={consts.START}
-      focusOnSelect={true}
-      transitionMs={1800}
-      itemsToShow={4}
-      outerSpacing={0}
-      itemPadding={[0, 20]}
-    >
-      {listRepos}
-    </Carousel>
-  )
+  return <Row>{listRepos}</Row>
 }
 
 export default CardCarousel

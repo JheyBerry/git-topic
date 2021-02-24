@@ -59,6 +59,7 @@ a {
   height: 20rem;
   padding: 1rem;
   border-radius: 2rem !important;
+  margin: 1rem;
 }
 
 .bg-light.active.card {
@@ -99,6 +100,15 @@ a {
   background: var(--main-gradient-hover) !important;
   border: var(--main-gradient-hover) !important;
   transition-duration: 2s;
+}
+
+.expand {
+  align-self: flex-end;
+  position: absolute;
+}
+
+i.fas.fa-expand-arrows-alt:hover {
+  font-size: 1.1rem;
 }
 
 .home-animation {
