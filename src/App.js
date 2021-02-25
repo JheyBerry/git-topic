@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
 
 import { NavBar, Loading } from './components'
-import { Home, StarredRepo, MyRepos } from './views'
+import { Home, StarredRepo, MyRepositories } from './views'
 import ProtectedRoute from './auth/protected-route'
 import Container from 'react-bootstrap/Container'
 
@@ -26,7 +26,7 @@ const App = () => {
             path="/starred-repositories"
             component={StarredRepo}
           />
-          <ProtectedRoute path="/repositories" component={MyRepos} />
+          <ProtectedRoute path="/repositories" component={MyRepositories} />
         </Switch>
       </Container>
     </div>

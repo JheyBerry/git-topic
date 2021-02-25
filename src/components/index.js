@@ -1,8 +1,17 @@
 import Loading from './loading'
 import NavBar from './nav-bar'
-import Card from './card'
-import RepoCard from './repo-card'
-import ShowTopics from './get-topics'
+import Cards from './cards'
+import Topics from './topics'
+import CardsList from './cards-list'
+import PageInstructions from './page-instructions'
 import AuthenticationButtonHome from './authentication-button-home'
 
-export { Loading, NavBar, Card, RepoCard, AuthenticationButtonHome, ShowTopics }
+export {
+  Loading,
+  NavBar,
+  Cards,
+  AuthenticationButtonHome,
+  Topics,
+  PageInstructions,
+  CardsList,
+}

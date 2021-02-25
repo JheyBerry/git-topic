@@ -1,9 +1,15 @@
 import React from 'react'
-import Spinner from 'react-bootstrap/Spinner'
+import LoadingAnimation from '../animation/loading-animation'
+import paperplane from '../animation/paperplane.json'
 
-const Loading = () => (
-  <Spinner animation="border" role="status">
-    <span className="sr-only">Loading...</span>
-  </Spinner>
-)
+const Loading = () => {
+  return (
+    <div className="Loading">
+      <div>
+        <LoadingAnimation lotti={paperplane} />
+      </div>
+    </div>
+  )
+}
+
 export default Loading

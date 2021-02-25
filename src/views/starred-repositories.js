@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Card, Row } from 'react-bootstrap'
 import { useAuth0 } from '@auth0/auth0-react'
 import axios from 'axios'
 
@@ -26,20 +27,16 @@ const StarredRepo = () => {
     repos.length !== 0 ? (
       repos.map((item) => {
         return (
-          <div className="card" key={item.id}>
-            <div className="card-body">
-              <h5 className="card-title">{item.name}</h5>
-              <h6 className="card-subtitle mb-2 text-muted">{item.id}</h6>
-              <p className="card-text">{item.description}</p>
-              <a
-                href={item.svn_url}
-                target="_blank"
-                rel="noreferrer"
-                className="card-link"
-              >
-                {item.svn_url}
-              </a>
-            </div>
+          <div key={item.id}>
+            <Card className="bg-light card">
+              <Card.Title>
+                <a href={item.svn_url} target="_blank" rel="noreferrer">
+                  {item.name}
+                </a>
+              </Card.Title>
+              <Card.Subtitle>{item.id}</Card.Subtitle>
+              <Card.Text>{item.description}</Card.Text>
+            </Card>
           </div>
         )
       })
@@ -47,7 +44,19 @@ const StarredRepo = () => {
       <p>Any Starred Repository</p>
     )
 
-  return <div>{listStarredRepos}</div>
+  return (
+    <div>
+      <div className="instructions">
+        <div className="instructions-animation">
+          <h1>Your starred repositories is here</h1>
+          <h2> but for now, it is just to look at..</h2>
+        </div>
+      </div>
+      <div className="card-animation">
+        <Row>{listStarredRepos}</Row>
+      </div>
+    </div>
+  )
 }
 
 export default StarredRepo
