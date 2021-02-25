@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { useAuth0 } from '@auth0/auth0-react'
 import axios from 'axios'
-import DeleteTopic from './delete-topic'
-import EditTopic from './edit-topic'
+import DeleteTopic from './delete-topics'
+import EditTopic from './edit-topics'
 import PropTypes from 'prop-types'
 
 const Topics = ({ repo }) => {
@@ -34,7 +34,7 @@ const Topics = ({ repo }) => {
       // eslint-disable-next-line no-unused-vars
       const topicsButton = topics.map((itemTopic, index) => {
         return (
-          <button key={repo} className="btn-primary">
+          <button key={topics.status} className="btn-primary">
             {itemTopic}
             <EditTopic item={topics} repo={repo} />
             <DeleteTopic item={topics} repo={repo} />

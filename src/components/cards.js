@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import { Card, Button, Row, Modal, Col } from 'react-bootstrap'
-import AddTopic from './add-topic'
-import Topics from './get-topics'
+import AddTopics from './add-topics'
+import Topics from './topics'
 import PropTypes from 'prop-types'
 
-const RepoCard = ({ item }) => {
+const Cards = ({ item }) => {
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
 
   const card = () => {
     return (
-      <div>
+      <div className="card-animation">
         <Card className="bg-light card">
           <Row>
             <Col xs={10}>
@@ -44,21 +44,23 @@ const RepoCard = ({ item }) => {
     return (
       <div>
         <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>
-              <a href={item.svn_url} target="_blank" rel="noreferrer">
-                {item.name}
-              </a>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Card.Subtitle>ID: {item.id}</Card.Subtitle>
-            <Card.Text>{item.description}</Card.Text>
-            <div>
-              <AddTopic item={item} />
-              <Topics key={item.name} repo={item.name} />
-            </div>
-          </Modal.Body>
+          <div className="bg-light">
+            <Modal.Header closeButton>
+              <Modal.Title>
+                <a href={item.svn_url} target="_blank" rel="noreferrer">
+                  {item.name}
+                </a>
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Card.Subtitle>ID: {item.id}</Card.Subtitle>
+              <Card.Text>{item.description}</Card.Text>
+              <div>
+                <AddTopics item={item} />
+                <Topics key={item.node_id} repo={item.name} />
+              </div>
+            </Modal.Body>
+          </div>
         </Modal>
       </div>
     )
@@ -67,8 +69,8 @@ const RepoCard = ({ item }) => {
   return <div>{card()}</div>
 }
 
-RepoCard.propTypes = {
+Cards.propTypes = {
   item: PropTypes.object,
 }
 
-export default RepoCard
+export default Cards

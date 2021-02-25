@@ -21,15 +21,6 @@ a {
   color: var(--main-color) !important;
 }
 
-.overflow-hidden {
-  overflow: hidden !important;
-}
-
-.next-steps .fa-link {
-  margin-right: 5px;
-}
-
-/* Fix for use only flexbox in content area */
 .next-steps .row {
   margin-bottom: 0;
 }
@@ -38,20 +29,8 @@ a {
   margin-bottom: 3rem;
 }
 
-.loading-animation {
-  height: 60vh !important;
-  width: 60vw !important;
-  margin: auto;
-}
-
 .result-block-container .result-block {
   opacity: 1;
-}
-
-.logo {
-  background-image: url(../src/assets/git-topics.svg) !important;
-  width: 6.5rem;
-  height: 4rem;
 }
 
 .navbar {
@@ -64,25 +43,31 @@ a {
   justify-content: center;
 }
 
-.card .row {
-  margin: 0;
-}
-
 .col-10 {
   padding-left: 0 !important;
 }
+
+.bg-light {
+  background: radial-gradient(
+      circle at center top,
+      rgb(255 255 255),
+      rgb(197 197 197)
+    )
+    0% 0% / cover fixed;
+  box-shadow: rgb(19 1 7 / 53%) -2px 2px 4px inset,
+    rgb(255 255 255) 5px -5px 3px inset;
+}
+
+/*Card*/
 
 .card {
   width: 22rem;
   height: 18rem;
   padding: 1.5rem;
-  border-radius: 2rem !important;
   margin: 1rem;
-}
-
-.active.card {
-  width: 46rem;
-  transition: 1s;
+  overflow: auto;
+  border: none !important;
+  border-radius: 2rem !important;
 }
 
 .card-title,
@@ -94,6 +79,12 @@ a {
 .card-title {
   font-size: 1.5rem !important;
 }
+
+.card .row {
+  margin: 0;
+}
+
+/*Buttons*/
 
 .btn-primary {
   margin: 0.5rem;
@@ -131,6 +122,70 @@ a {
   vertical-align: text-top;
 }
 
+/*Animation*/
+
+.home-animation {
+  position: absolute;
+  width: 100%;
+  top: -5px;
+  left: 0;
+  z-index: -1;
+}
+
+.home-text-animation {
+  position: relative;
+  opacity: 0;
+  margin: 2% 15%;
+  transform: translateX(-600px);
+  animation: 1.2s slideIn ease-in-out forwards 1s;
+}
+
+.home-text-animation::before {
+  content: '';
+  width: 0%;
+  height: 76px;
+  position: absolute;
+  left: -10px;
+  animation: 2s underline ease-in-out forwards 2s;
+  mix-blend-mode: screen;
+}
+
+.loading-animation {
+  height: 60vh !important;
+  width: 60vw !important;
+  margin: auto;
+}
+
+.card-animation {
+  position: relative;
+  transform: translateX(-2000px);
+  animation: 1.5s slideIn ease-in-out forwards 2s;
+}
+
+/*Icons and Images*/
+
+.logo {
+  background-image: url(../src/assets/git-topics.svg) !important;
+  width: 6.5rem;
+  height: 4rem;
+}
+
+.instructions-animation {
+  position: relative;
+  opacity: 0;
+  margin: 2% 15%;
+  transform: translateX(-600px);
+  animation: 1s slideIn ease-in-out forwards 1s;
+}
+
+.instructions-animation img {
+  width: 6.5rem;
+  position: absolute;
+  top: 4rem;
+  right: -7rem;
+  transform: rotate(293deg);
+}
+
 .expand {
   align-self: flex-end;
   position: absolute;
@@ -144,13 +199,18 @@ i.fa.fa-external-link:hover {
   font-size: 1.7rem;
 }
 
-.home-animation {
-  position: absolute;
-  width: 100%;
-  top: -5px;
-  left: 0;
-  z-index: -1;
+.next-steps .fa-link {
+  margin-right: 5px;
 }
+
+@keyframes slideIn {
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/*Text*/
 
 .home-text {
   position: absolute;
@@ -177,31 +237,6 @@ i.fa.fa-external-link:hover {
   margin-bottom: 3%;
 }
 
-.home-text-animation {
-  position: relative;
-  opacity: 0;
-  margin: 2% 15%;
-  transform: translateX(-600px);
-  animation: 1.2s slideIn ease-in-out forwards 1s;
-}
-
-.home-text-animation::before {
-  content: '';
-  width: 0%;
-  height: 76px;
-  position: absolute;
-  left: -10px;
-  animation: 2s underline ease-in-out forwards 2s;
-  mix-blend-mode: screen;
-}
-
-@keyframes slideIn {
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
 .instructions {
   width: 100%;
   height: 100%;
@@ -225,31 +260,12 @@ i.fa.fa-external-link:hover {
   margin-bottom: 3%;
 }
 
-.instructions-animation {
-  position: relative;
-  opacity: 0;
-  margin: 2% 15%;
-  transform: translateX(-600px);
-  animation: 1.2s slideIn ease-in-out forwards 1s;
-}
-
-.instructions-animation::before {
-  content: '';
-  position: relative;
-  opacity: 0;
-  margin: 2% 15%;
-  transform: translateX(-600px);
-  animation: 1.2s slideIn ease-in-out forwards 1s;
-}
-
-.instructions-animation img {
-  width: 6.5rem;
-  position: absolute;
-  top: 4rem;
-  right: -7rem;
-  transform: rotate(293deg);
-}
+/*Modal*/
 
 .modal-backdrop.show {
   opacity: 0.8 !important;
+}
+
+.modal-content {
+  border-radius: 1rem !important;
 }

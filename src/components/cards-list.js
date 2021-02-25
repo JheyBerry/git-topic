@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react'
 import Row from 'react-bootstrap/Row'
 import { useAuth0 } from '@auth0/auth0-react'
 import axios from 'axios'
-import { RepoCard } from '.'
+import Cards from './cards.js'
 
-const CardList = () => {
+const CardsList = () => {
   const { user } = useAuth0()
   const [repos, setRepos] = useState([])
 
@@ -29,7 +29,7 @@ const CardList = () => {
   const listRepos =
     repos.length !== 0 ? (
       repos.map((item) => {
-        return <RepoCard key={item.type} item={item} />
+        return <Cards key={item.git_url} item={item} />
       })
     ) : (
       <p>Any Repository</p>
@@ -38,4 +38,4 @@ const CardList = () => {
   return <Row>{listRepos}</Row>
 }
 
-export default CardList
+export default CardsList

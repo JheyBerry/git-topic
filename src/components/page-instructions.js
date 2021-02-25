@@ -1,7 +1,7 @@
 import React from 'react'
 import Arrow from '../assets/decrease.svg'
 
-const InstructionsRepos = () => {
+const PageInstructions = () => {
   return (
     <div className="instructions">
       <div className="instructions-animation">
@@ -13,4 +13,4 @@ const InstructionsRepos = () => {
   )
 }
 
-export default InstructionsRepos
+export default PageInstructions

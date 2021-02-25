@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
-import { CardList, InstructionsRepos } from '../components'
+import { CardsList, PageInstructions } from '../components'
 
 const MyRepositories = () => {
   return (
     <div>
-      <InstructionsRepos />
-      <CardList />
+      <PageInstructions />
+      <CardsList />
     </div>
   )
 }
