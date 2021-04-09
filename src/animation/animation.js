@@ -2,13 +2,13 @@ import React from 'react'
 import Lottie from 'react-lottie'
 import PropTypes from 'prop-types'
 
-const HomeAnimation = ({ lotti }) => {
+const Animation = ({ lotti, loop, aspectRatio }) => {
   const defaultOptions = {
-    loop: false,
+    loop: loop,
     autoplay: true,
     animationData: lotti,
     rendererSettings: {
-      preserveAspectRatio: 'xMidYMid meet',
+      preserveAspectRatio: aspectRatio,
     },
   }
 
@@ -19,8 +19,10 @@ const HomeAnimation = ({ lotti }) => {
   )
 }
 
-HomeAnimation.propTypes = {
+Animation.propTypes = {
   lotti: PropTypes.any,
+  loop: PropTypes.any,
+  aspectRatio: PropTypes.any,
 }
 
-export default HomeAnimation
+export default Animation

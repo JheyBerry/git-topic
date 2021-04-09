@@ -1,12 +1,16 @@
 import React from 'react'
-import LoadingAnimation from '../animation/loading-animation'
+import Animation from '../animation/animation'
 import paperplane from '../animation/paperplane.json'
 
 const Loading = () => {
   return (
     <div className="Loading">
       <div>
-        <LoadingAnimation lotti={paperplane} />
+        <Animation
+          lotti={paperplane}
+          loop={true}
+          aspectRatio={'xMinYMin slice'}
+        />
       </div>
     </div>
   )
