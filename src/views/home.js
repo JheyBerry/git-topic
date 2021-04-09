@@ -1,13 +1,13 @@
 import React from 'react'
 import { AuthenticationButtonHome } from '../components'
-import HomeAnimation from '../animation/home-animation'
+import Animation from '../animation/animation'
 import home from '../animation/home.json'
 
 const Home = () => {
   return (
     <div className="App">
       <div>
-        <HomeAnimation lotti={home} />
+        <Animation lotti={home} loop={false} aspectRatio={'xMidYMid meet'} />
       </div>
       <div className="home-text">
         <h1>Git Topics</h1>
